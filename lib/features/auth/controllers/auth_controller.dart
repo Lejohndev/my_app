@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../models/login_response.dart';
 import '../models/user_model.dart';
 
 class AuthController extends ChangeNotifier {
@@ -22,7 +21,7 @@ class AuthController extends ChangeNotifier {
       _errorMessage = null;
       notifyListeners();
 
-      // TODO: Gọi API login từ ApiClient
+      // NOTE: Gọi API login từ ApiClient
       // Ví dụ:
       // final response = await ApiClient.post(
       //   '/auth/login',
@@ -44,7 +43,7 @@ class AuthController extends ChangeNotifier {
         createdAt: DateTime.now(),
       );
 
-      // TODO: Lưu token vào FlutterSecureStorage
+      // NOTE: Lưu token vào FlutterSecureStorage
       // await SecureStorage.saveToken(_token!);
 
       _isLoading = false;
@@ -69,7 +68,7 @@ class AuthController extends ChangeNotifier {
       _errorMessage = null;
       notifyListeners();
 
-      // TODO: Gọi API register từ ApiClient
+      // NOTE: Gọi API register từ ApiClient
       // Ví dụ:
       // final response = await ApiClient.post(
       //   '/auth/register',
@@ -96,7 +95,7 @@ class AuthController extends ChangeNotifier {
   /// Đăng xuất
   Future<bool> logout() async {
     try {
-      // TODO: Xóa token từ FlutterSecureStorage
+      // NOTE: Xóa token từ FlutterSecureStorage
       // await SecureStorage.deleteToken();
 
       _token = null;

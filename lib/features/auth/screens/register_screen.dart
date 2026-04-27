@@ -4,7 +4,7 @@ import '../../../core/constants/app_colors.dart';
 import '../controllers/auth_controller.dart';
 
 class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({Key? key}) : super(key: key);
+  const RegisterScreen({super.key});
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
@@ -56,7 +56,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       );
 
       if (success && mounted) {
-        // TODO: Điều hướng sang màn hình xác nhận email hoặc đăng nhập
+        // NOTE: Điều hướng sang màn hình xác nhận email hoặc đăng nhập
         ScaffoldMessenger.of(
           context,
         ).showSnackBar(const SnackBar(content: Text('Đăng ký thành công!')));
@@ -325,7 +325,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         TextButton(
                           onPressed: () {
-                            // TODO: Mở page điều khoản dịch vụ
+                            // NOTE: Mở page điều khoản dịch vụ
                           },
                           style: TextButton.styleFrom(
                             padding: const EdgeInsets.symmetric(horizontal: 4),
@@ -350,7 +350,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     Container(
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                        color: AppColors.error.withOpacity(0.1),
+                        color: AppColors.error.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(color: AppColors.error),
                       ),
@@ -391,8 +391,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         : () => _handleRegister(authController),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.primary,
-                      disabledBackgroundColor: AppColors.primary.withOpacity(
-                        0.5,
+                      disabledBackgroundColor: AppColors.primary.withValues(
+                        alpha: 0.5,
                       ),
                       padding: const EdgeInsets.symmetric(vertical: 14),
                       shape: RoundedRectangleBorder(

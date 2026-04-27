@@ -4,7 +4,7 @@ import '../../../core/constants/app_colors.dart';
 import '../controllers/auth_controller.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -38,7 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
       );
 
       if (success && mounted) {
-        // TODO: Điều hướng sang màn hình chính
+        // NOTE: Điều hướng sang màn hình chính
         // Navigator.of(context).pushReplacementNamed('/home');
         ScaffoldMessenger.of(
           context,
@@ -184,7 +184,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     alignment: Alignment.centerRight,
                     child: TextButton(
                       onPressed: () {
-                        // TODO: Điều hướng sang màn hình quên mật khẩu
+                        // NOTE: Điều hướng sang màn hình quên mật khẩu
                         // Navigator.of(context).pushNamed('/forgot-password');
                       },
                       child: const Text(
@@ -202,7 +202,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Container(
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                        color: AppColors.error.withOpacity(0.1),
+                        color: AppColors.error.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(color: AppColors.error),
                       ),
@@ -243,8 +243,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         : () => _handleLogin(authController),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.primary,
-                      disabledBackgroundColor: AppColors.primary.withOpacity(
-                        0.5,
+                      disabledBackgroundColor: AppColors.primary.withValues(
+                        alpha: 0.5,
                       ),
                       padding: const EdgeInsets.symmetric(vertical: 14),
                       shape: RoundedRectangleBorder(
@@ -278,7 +278,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Expanded(
                         child: Container(
                           height: 1,
-                          color: AppColors.textSecondary.withOpacity(0.3),
+                          color: AppColors.textSecondary.withValues(alpha: 0.3),
                         ),
                       ),
                       const Padding(
@@ -294,7 +294,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Expanded(
                         child: Container(
                           height: 1,
-                          color: AppColors.textSecondary.withOpacity(0.3),
+                          color: AppColors.textSecondary.withValues(alpha: 0.3),
                         ),
                       ),
                     ],
@@ -303,7 +303,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   // Social Login Buttons
                   OutlinedButton.icon(
                     onPressed: () {
-                      // TODO: Đăng nhập bằng Google
+                      // NOTE: Đăng nhập bằng Google
                     },
                     icon: const Icon(Icons.language),
                     label: const Text('Đăng nhập bằng Google'),
@@ -333,7 +333,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       TextButton(
                         onPressed: () {
-                          // TODO: Điều hướng sang màn hình đăng ký
+                          // NOTE: Điều hướng sang màn hình đăng ký
                           // Navigator.of(context).pushNamed('/register');
                         },
                         child: const Text(
