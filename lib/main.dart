@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'core/network/api_client.dart';
 import 'features/project_history/controllers/history_controller.dart';
 import 'features/auth/controllers/auth_controller.dart';
-import 'features/auth/screens/login_screen.dart';
 import 'routes/app_routes.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final apiClient = ApiClient();
+  await apiClient.testHealth();
   runApp(const MyApp());
 }
 
